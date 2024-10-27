@@ -1,17 +1,16 @@
-// src/pages/BookList.tsx
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; // Import Link for routing
-import { fetchBooks, deleteBook } from "../services/api"; // Import API functions
+import { Link } from "react-router-dom"; 
+import { fetchBooks, deleteBook } from "../services/api"; 
 import "../styles/global.css";
 
 const BookList: React.FC = () => {
-  const [books, setBooks] = useState<any[]>([]); // State to store book records
+  const [books, setBooks] = useState<any[]>([]); 
 
   // Fetch books when the component mounts
   useEffect(() => {
     const loadBooks = async () => {
       const booksData = await fetchBooks();
-      setBooks(booksData); // Set the fetched books in state
+      setBooks(booksData); 
     };
 
     loadBooks();
@@ -21,8 +20,8 @@ const BookList: React.FC = () => {
   const handleDelete = async (id: number) => {
     const confirmDelete = window.confirm("Are you sure you want to delete this book?");
     if (confirmDelete) {
-      await deleteBook(id); // Call the delete function
-      setBooks(books.filter((book) => book.id !== id)); // Update the state to remove the deleted book
+      await deleteBook(id); 
+      setBooks(books.filter((book) => book.id !== id)); 
     }
   };
 
@@ -31,7 +30,7 @@ const BookList: React.FC = () => {
       <div className="table-header">
         <h2>Available Book List</h2>
         <Link to="/add" className="button">
-          Add New Book {/* Link to AddBook page */}
+          Add New Book 
         </Link>
       </div>
 

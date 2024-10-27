@@ -11,7 +11,7 @@ const AddBook: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setErrors({}); // Clear previous errors
+    setErrors({}); 
 
     // Basic validation checks
     const newErrors: { [key: string]: string[] } = {};
@@ -26,7 +26,7 @@ const AddBook: React.FC = () => {
 
     try {
       await addBook({ title, author, description });
-      navigate('/books'); // Redirect to Book List after adding
+      navigate('/books'); 
     } catch (error: any) {
       setErrors(error || { submitError: ["Failed to add book"] });
     }

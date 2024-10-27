@@ -16,7 +16,7 @@ const Login: React.FC = () => {
       const userData = await loginUser(email, password);
       console.log('User logged in:', userData);
 
-      navigate('/books'); // Redirect to BookList
+      navigate('/books'); 
     } catch (err) {
       setError('Invalid email or password');
       console.error(err);

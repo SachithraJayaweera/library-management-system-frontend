@@ -1,4 +1,4 @@
-// src/services/api.ts
+
 import axios from 'axios';
 
 const API_URL = 'https://localhost:7108/api/Books';
@@ -54,6 +54,7 @@ export const fetchBookById = async (id: string) => {
     });
   };
 
+  //login user
 export async function loginUser(email: string, password: string) {
     const response = await fetch(`${API_URL_LOGIN}`, {
       method: 'POST',
@@ -71,7 +72,7 @@ export async function loginUser(email: string, password: string) {
     return response.json();
   }
   
-
+  //register user
   export async function registerUser(email: string, password: string): Promise<void> {
     const response = await fetch(`${API_URL_REGISTER}`, {
       method: 'POST',

@@ -6,7 +6,7 @@ const Register: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState<{ [key: string]: string[] }>({});
-  const navigate = useNavigate(); // Initialize navigate hook
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -15,7 +15,7 @@ const Register: React.FC = () => {
     try {
       await registerUser(email, password);
       alert("Registration successful");
-      navigate("/"); // Redirect to login page
+      navigate("/"); 
     } catch (error: any) {
       if (error) {
         setErrors(error);
@@ -26,7 +26,7 @@ const Register: React.FC = () => {
   };
 
   return (
-    <div className="register-card"> {/* Card wrapper added */}
+    <div className="register-card"> 
       <h2>Register</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -77,8 +77,7 @@ const Register: React.FC = () => {
 
         <button type="submit" className="register-button">Register</button>
       </form>
-
-      {/* Link to go back to Login page */}
+      
       <p>
         Already registered? <Link to="/">Go to Login</Link>
       </p>
