@@ -50,6 +50,7 @@ const Register: React.FC = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+
           {errors.PasswordTooShort && (
             <p style={{ color: "red" }}>{errors.PasswordTooShort[0]}</p>
           )}
@@ -86,3 +87,11 @@ const Register: React.FC = () => {
 };
 
 export default Register;
+
+
+
+
+
+
+
+
