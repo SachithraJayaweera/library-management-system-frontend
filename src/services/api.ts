@@ -2,6 +2,8 @@
 import axios from 'axios';
 
 const API_URL = 'https://localhost:7108/api/Books';
+const API_URL_LOGIN = 'https://localhost:7108/login';
+const API_URL_REGISTER = 'https://localhost:7108/register';
 // Fetch all books
 export const fetchBooks = async () => {
   const response = await axios.get(API_URL, {
@@ -53,7 +55,7 @@ export const fetchBookById = async (id: string) => {
   };
 
 export async function loginUser(email: string, password: string) {
-    const response = await fetch('https://localhost:7108/login', {
+    const response = await fetch(`${API_URL_LOGIN}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -71,7 +73,7 @@ export async function loginUser(email: string, password: string) {
   
 
   export async function registerUser(email: string, password: string): Promise<void> {
-    const response = await fetch('https://localhost:7108/register', {
+    const response = await fetch(`${API_URL_REGISTER}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
